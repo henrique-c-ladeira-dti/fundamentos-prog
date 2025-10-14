@@ -51,23 +51,33 @@ Hexadecimal → Usa 16 símbolos: de 0 a 9 e de A a F. É muito usado para repre
 
 Tabela comparativa de contagem:
 
-Decimal Binário Hexadecimal
-0 0000 0
-1 0001 1
-2 0010 2
-3 0011 3
-4 0100 4
-5 0101 5
-6 0110 6
-7 0111 7
-8 1000 8
-9 1001 9
-10 1010 A
-11 1011 B
-12 1100 C
-13 1101 D
-14 1110 E
-15 1111 F
+| Decimal | Binário | Hexadecimal | Binário (com padding) |
+| ------- | ------- | ----------- | --------------------- |
+| 0       | 0       | 0           | 0000                  |
+| 1       | 1       | 1           | 0001                  |
+| 2       | 10      | 2           | 0010                  |
+| 3       | 11      | 3           | 0011                  |
+| 4       | 100     | 4           | 0100                  |
+| 5       | 101     | 5           | 0101                  |
+| 6       | 110     | 6           | 0110                  |
+| 7       | 111     | 7           | 0111                  |
+| 8       | 1000    | 8           | 1000                  |
+| 9       | 1001    | 9           | 1001                  |
+| 10      | 1010    | A           | 1010                  |
+| 11      | 1011    | B           | 1011                  |
+| 12      | 1100    | C           | 1100                  |
+| 13      | 1101    | D           | 1101                  |
+| 14      | 1110    | E           | 1110                  |
+| 15      | 1111    | F           | 1111                  |
+| -       | -       | -           | -                     |
+| 16      | 10000   | 10          | 10000                 |
+
+Note que 4 algarismo binários são representado com um único número em hexadecimal. Essa simetria se dá porque 2^4 = 16. Conversões entre binários e decimais não são tão diretas, isto porque 10 não é solução para 2^x onde x é um número inteiro.
+
+Logo um número como 101110 em binário, podemos separá-los em grupo de 4, adicionando zeros a esquerda conforme necessário (padding).
+
+Isso resulta numa representação 0010 1110, que em hexadecimal é 2E.
+É comum em programação usarmos 0b para número binários e 0x para hexadecimais, assim: **0b00101110 = 0x2E**.
 
 ## Sistemas Eletrônicos: Analógicos e Digitais
 
@@ -103,6 +113,14 @@ OR (OU) → Retorna 1 se pelo menos uma entrada for 1.
 
 NOT (NÃO) → Inverte o sinal: transforma 1 em 0 e 0 em 1.
 
+XOR (OU Exclusivo) → Retorna 1 se apenas uma das entradas for 1.
+
+XNOR (OU Exclusivo Negado) → Retorna 1 se as entradas forem iguais.
+
+NAND (E Negado) → Retorna 0 apenas se todas as entradas forem 1 (inverso da AND).
+
+NOR (OU Negado) → Retorna 1 apenas se todas as entradas forem 0 (inverso da OR).
+
 ## Computadores Digitais vs Analógicos
 
 Um computador digital trabalha com informações representadas em forma binária (0 e 1). Isso torna o processamento mais confiável, pois pequenas variações ou ruídos não afetam o resultado final — basta identificar se o sinal está mais próximo de 0 ou de 1.
@@ -113,6 +131,25 @@ Já um computador analógico trabalha com sinais contínuos, onde qualquer valor
 As portas lógicas não servem apenas para comparar sinais — elas também podem ser combinadas para realizar operações matemáticas.
 Por exemplo, para somar dois números binários, usamos circuitos chamados somadores (adders), que combinam portas AND, OR e XOR para calcular o resultado e o “vai um” (carry).
 Para subtração, podemos usar um somador junto com portas NOT para inverter bits e aplicar o método do complemento de dois.
+
+Somando dois números de 1 bit
+Para somar dois números binários de 1 bit (A e B), usamos um circuito chamado meio somador (half adder), que combina duas portas lógicas:
+
+Porta XOR → Calcula o bit de resultado (Soma). Observe que o resultado sempre é 0 se as entradas forem iguais.
+
+Porta AND → Calcula o “vai um” (Carry). Observe que no carry, a saída é 1 apenas se ambas entradas forem 1.
+
+Tabela verdade – Meio Somador:
+
+| A   | B   | Soma (XOR) | Carry (AND) |
+| --- | --- | ---------- | ----------- |
+| 0   | 0   | 0          | 0           |
+| 0   | 1   | 1          | 0           |
+| 1   | 0   | 1          | 0           |
+| 1   | 1   | 0          | 1           |
+
+📌 Exemplo:
+1 + 1 (em binário) → Soma = 0, Carry = 1 → Resultado final = 10 (binário).
 
 ## Funcionamento Básico de uma ALU
 
@@ -127,7 +164,7 @@ Selecionador de operação → um conjunto de bits que indica qual operação fa
 
 Saída → o resultado da operação.
 
-Status → resultado de status da operações, se houver overflow por exemplo.
+Status → resultado de status da operações, é o exemplo do carry citado anteriormente.
 
 A ALU é formada por combinações de portas lógicas. O que você escreve em código de máquina ou assembly (como ADD A, B) é traduzido internamente para sinais que controlam essas portas, dizendo à ALU qual operação executar.
 
@@ -145,7 +182,7 @@ Com Sistema Operacional Completo → Computadores pessoais (PCs) usam sistemas o
 
 Podemos imaginar uma linha evolutiva da complexidade do sistema operacional:
 
-Microcontrolador → Super Nintendo → PlayStation 1 → PlayStation 5/PC
+Microcontroladores → Super Nintendo → PlayStation 1 → PlayStation 5/PC
 
 À medida que avançamos nessa linha:
 
