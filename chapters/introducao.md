@@ -51,42 +51,7 @@ Hexadecimal → Usa 16 símbolos: de 0 a 9 e de A a F. É muito usado para repre
 
 Tabela comparativa de contagem:
 
-| Decimal | Binário | Hexadecimal | Binário (com padding) |
-| ------- | ------- | ----------- | --------------------- |
-| 0       | 0       | 0           | 0000                  |
-| 1       | 1       | 1           | 0001                  |
-| 2       | 10      | 2           | 0010                  |
-| 3       | 11      | 3           | 0011                  |
-| 4       | 100     | 4           | 0100                  |
-| 5       | 101     | 5           | 0101                  |
-| 6       | 110     | 6           | 0110                  |
-| 7       | 111     | 7           | 0111                  |
-| 8       | 1000    | 8           | 1000                  |
-| 9       | 1001    | 9           | 1001                  |
-| 10      | 1010    | A           | 1010                  |
-| 11      | 1011    | B           | 1011                  |
-| 12      | 1100    | C           | 1100                  |
-| 13      | 1101    | D           | 1101                  |
-| 14      | 1110    | E           | 1110                  |
-| 15      | 1111    | F           | 1111                  |
-| -       | -       | -           | -                     |
-| 16      | 10000   | 10          | 0001 0000             |
-| 17      | 10001   | 11          | 0001 0001             |
-| 18      | 10010   | 12          | 0001 0010             |
-| 19      | 10011   | 13          | 0001 0011             |
-| 20      | 10100   | 14          | 0001 0100             |
-| 21      | 10101   | 15          | 0001 0101             |
-| 22      | 10110   | 16          | 0001 0110             |
-| 23      | 10111   | 17          | 0001 0111             |
-| 24      | 11000   | 18          | 0001 1000             |
-| 25      | 11001   | 19          | 0001 1001             |
-| 26      | 11010   | 1A          | 0001 1010             |
-| 27      | 11011   | 1B          | 0001 1011             |
-| 28      | 11100   | 1C          | 0001 1100             |
-| 29      | 11101   | 1D          | 0001 1101             |
-| 30      | 11110   | 1E          | 0001 1110             |
-| 31      | 11111   | 1F          | 0001 1111             |
-| 32      | 100000  | 20          | 0010 0000             |
+📊 **[Veja a tabela completa de conversão entre sistemas numéricos](./tabela-conversao-sistemas.md)**
 
 Note que 4 algarismo binários são representado com um único número em hexadecimal. Essa simetria se dá porque 2^4 = 16. Conversões entre binários e decimais não são tão diretas, isto porque 10 não é solução para 2^x onde x é um número inteiro.
 
@@ -224,3 +189,85 @@ Terminal → Uma interface baseada em texto, onde digitamos comandos e recebemos
 
 Interface Gráfica (GUI) → Uma interface visual com janelas, ícones e botões, pensada para facilitar o uso por pessoas que não querem memorizar comandos.
 Essas duas formas estão relacionadas: a interface gráfica é, na prática, um programa que envia comandos ao sistema, assim como o terminal, mas de forma visual e mais amigável.
+
+# Usando o Terminal no macOS – Comandos Básicos
+
+O **terminal** é uma forma de interagir com o computador usando texto, digitando comandos que o sistema operacional executa.  
+No macOS, o terminal segue a base do **Unix**, então muitos comandos funcionam igual no Linux.
+
+A seguir, alguns comandos e operadores essenciais para começar:
+
+---
+
+## Comandos
+
+```bash
+### `pwd` – Print Working Directory
+# pwd
+# Saída: /Users/seunome/Documents
+# Mostra o caminho completo da pasta onde você está no momento.
+
+# cd – Change Directory
+# Muda para outra pasta (diretório).
+cd /Users/seunome/Desktop
+
+# Acessar a pasta pessoal (home):
+cd ~
+# ou simplesmente
+cd
+
+# pbpaste
+# Cola no terminal o conteúdo que está na área de transferência (clipboard).
+pbpaste > texto.txt
+# Cola o que está no clipboard dentro do arquivo texto.txt
+
+# pbcopy
+# Copia para a área de transferência o que for enviado para ele.
+cat texto.txt | pbcopy
+# Copia o conteúdo do arquivo texto.txt para o clipboard
+ls – List
+# Lista os arquivos e pastas do diretório atual.
+
+# ls
+# Com argumentos adicionais:
+
+# -a → Mostra arquivos ocultos (que começam com .)
+# -l → Mostra detalhes (permissões, tamanho, data)
+# -al → Combina os dois (arquivos ocultos + detalhes)
+ls -al
+
+# open
+# Abre um arquivo ou pasta com o aplicativo padrão do macOS.
+open foto.jpg
+open .
+# O ponto (.) abre a pasta atual no Finder
+
+# cat – Concatenate
+# Mostra o conteúdo de um arquivo no terminal.
+cat texto.txt
+
+# grep – Global Regular Expression Print
+# Procura por uma palavra ou padrão dentro de arquivos ou na saída de outro comando.
+grep "erro" log.txt
+# Mostra todas as linhas do arquivo log.txt que contêm a palavra "erro"
+cat log.txt | grep "sucesso"
+# Filtra a saída do cat para mostrar apenas linhas com "sucesso"
+
+
+# Operadores
+
+# | (pipe)
+# Envia a saída de um comando como entrada para outro comando.
+cat texto.txt | pbcopy
+# O conteúdo do arquivo é enviado para o pbcopy
+
+# > (redirecionamento)
+# Envia a saída de um comando para um arquivo, substituindo o conteúdo existente.
+echo "Olá mundo" > arquivo.txt
+# Cria ou substitui arquivo.txt com o texto "Olá mundo"
+
+# >> (redirecionamento com append)
+# Envia a saída de um comando para um arquivo, adicionando ao final sem apagar o conteúdo existente.
+echo "Nova linha" >> arquivo.txt
+# Adiciona "Nova linha" ao final do arquivo.txt
+```
