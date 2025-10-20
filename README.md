@@ -35,6 +35,19 @@ Guia completo sobre interfaces de usuário e uso prático do terminal.
 - Ferramentas de produtividade
 - **Personalização do Terminal (.zshrc)**
 
+### 🔀 **[Controle de Versão com Git](./chapters/git-controle-versao.md)**
+
+Guia completo sobre Git, o sistema de controle de versão mais usado no desenvolvimento.
+
+**Conteúdo abordado:**
+
+- Conceitos fundamentais (repositório, commit, branch)
+- Comandos básicos e fluxo de trabalho
+- Colaboração e repositórios remotos
+- Resolução de conflitos e problemas comuns
+- Boas práticas e organização
+- **Comandos de referência rápida**
+
 ### 📊 **[Tabela de Conversão entre Sistemas Numéricos](./chapters/tabela-conversao-sistemas.md)**
 
 Referência completa para conversões entre decimal, binário e hexadecimal.
@@ -105,11 +118,17 @@ fundamentos-prog/
 ├── chapters/
 │   ├── introducao.md                  # Documento principal
 │   ├── interfaces-terminal.md         # Guia do terminal
+│   ├── git-controle-versao.md         # Guia do Git
 │   └── tabela-conversao-sistemas.md   # Tabela de referência
 └── images/
     ├── res-cap-ind.png               # Componentes elétricos
     ├── dio-trans.png                 # Componentes eletrônicos
+    ├── alu.png                       # Diagrama da ALU
+    └── book_cover.png                # Capa do livro
+```
+
     └── alu.png                       # Diagrama da ALU
+
 ```
 
 ---
@@ -120,7 +139,8 @@ fundamentos-prog/
 
 - **[📖 Introdução Completa](./chapters/introducao.md)** - Fundamentos de eletrônica e programação
 - **[💻 Terminal e Interfaces](./chapters/interfaces-terminal.md)** - Guia prático do terminal
-- **[📊 Tabela de Conversão](./chapters/tabela-conversao-sistemas.md)** - Sistemas numéricos
+- **[� Controle de Versão Git](./chapters/git-controle-versao.md)** - Sistema de versionamento
+- **[�📊 Tabela de Conversão](./chapters/tabela-conversao-sistemas.md)** - Sistemas numéricos
 
 ### Seções Específicas
 
@@ -129,6 +149,8 @@ fundamentos-prog/
 - **[Portas Lógicas](./chapters/introducao.md#41-portas-lógicas---os-blocos-básicos)**
 - **[Comandos Básicos](./chapters/interfaces-terminal.md#2-comandos-básicos-do-terminal-macosunix)**
 - **[Personalização do zshrc](./chapters/interfaces-terminal.md#7-personalização-básica-do-terminal-zshrc)**
+- **[Comandos Git Essenciais](./chapters/git-controle-versao.md#71-comandos-essenciais)**
+- **[Fluxo de Trabalho Git](./chapters/git-controle-versao.md#43-fluxo-básico-de-trabalho)**
 
 ---
 
@@ -157,3 +179,4 @@ Sugestões de melhoria são bem-vindas! Se encontrar erros ou tiver ideias para 
 ---
 
 **📚 Bons estudos e welcome to the world of computing fundamentals!** 🚀
+```
