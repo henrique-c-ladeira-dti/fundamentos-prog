@@ -16,7 +16,7 @@ Para compreender como funcionam os computadores modernos, é necessário começa
 
 ### 1.1 A Distinção Fundamental: Elétrica versus Eletrônica
 
-Uma das primeiras confusões que iniciantes enfrentam é a diferença entre **elétrica** e **eletrônica**. Embora intimamente relacionadas, estas áreas têm focos e aplicações distintos que são fundamentais para entender.
+É importante compreender a diferença entre **elétrica** e **eletrônica**. Embora intimamente relacionadas, estas áreas têm focos e aplicações distintos que são fundamentais para entender.
 
 #### **Engenharia Elétrica: A Infraestrutura da Energia**
 
