@@ -1,5 +1,9 @@
 # Fundamentos de Programação
 
+<div align="center">
+<img src="book_cover.png" alt="Capa do Livro - Fundamentos de Programação" width="400">
+</div>
+
 Este repositório contém material didático sobre os fundamentos que conectam eletrônica, sistemas digitais e programação, fornecendo uma base sólida para entender como funcionam os computadores modernos.
 
 ---
