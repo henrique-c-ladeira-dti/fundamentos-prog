@@ -95,6 +95,151 @@ git config --list
 git config --global core.editor nano
 ```
 
+#### 3.1.1 Personalização Avançada do .gitconfig
+
+O arquivo `.gitconfig` é onde o Git armazena todas as suas configurações. Você pode editá-lo diretamente ou usar comandos `git config`.
+
+**Localização do arquivo:**
+
+- **Global:** `~/.gitconfig` (configurações para todos os repositórios)
+- **Local:** `.git/config` (específico do repositório atual)
+
+##### **Aliases - Atalhos Personalizados**
+
+```bash
+# Criar aliases úteis
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.unstage 'reset HEAD --'
+
+# Aliases mais elaborados
+git config --global alias.lg "log --oneline --graph --all"
+git config --global alias.last 'log -1 HEAD'
+git config --global alias.visual '!gitk'
+```
+
+**Exemplo de uso:**
+
+```bash
+# Em vez de: git status
+git st
+
+# Em vez de: git log --oneline --graph --all
+git lg
+```
+
+##### **Configurações de Comportamento**
+
+```bash
+# Configurar comportamento do push
+git config --global push.default simple
+
+# Habilitar cores no terminal
+git config --global color.ui auto
+
+# Configurar merge tool
+git config --global merge.tool vimdiff
+
+# Configurar diff tool
+git config --global diff.tool vimdiff
+
+# Auto-correção de comandos digitados errado
+git config --global help.autocorrect 1
+
+# Habilitar rebase automático no pull
+git config --global pull.rebase true
+```
+
+##### **Exemplo de arquivo .gitconfig completo**
+
+```ini
+[user]
+    name = Seu Nome
+    email = seu.email@exemplo.com
+
+[core]
+    editor = nano
+    autocrlf = input
+    safecrlf = true
+
+[color]
+    ui = auto
+
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    ci = commit
+    df = diff
+    lg = log --oneline --graph --all
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    amend = commit --amend
+    undo = reset --soft HEAD~1
+
+[push]
+    default = simple
+
+[pull]
+    rebase = true
+
+[merge]
+    tool = vimdiff
+
+[diff]
+    tool = vimdiff
+
+[help]
+    autocorrect = 1
+```
+
+##### **Configurações por Repositório**
+
+Você também pode ter configurações específicas para cada projeto:
+
+```bash
+# Dentro de um repositório específico
+cd meu-projeto
+
+# Configurar email diferente para este projeto
+git config user.email "trabalho@empresa.com"
+
+# Esta configuração fica em .git/config (local)
+```
+
+##### **Dicas de Personalização**
+
+**🔧 Aliases Úteis para Produtividade:**
+
+```bash
+# Commit com mensagem rápida
+git config --global alias.cm "commit -m"
+
+# Add e commit juntos
+git config --global alias.ac "!git add -A && git commit -m"
+
+# Push para origin da branch atual
+git config --global alias.ps "push origin HEAD"
+
+# Pull com rebase
+git config --global alias.pr "pull --rebase"
+
+# Desfazer último commit mantendo mudanças
+git config --global alias.undo "reset --soft HEAD~1"
+```
+
+**🎨 Personalizar Saída de Log:**
+
+```bash
+# Log bonito com gráfico
+git config --global alias.tree "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# Ver contribuições por autor
+git config --global alias.contributors "shortlog --summary --numbered"
+```
+
 ### 3.2 Criando e Clonando Repositórios
 
 ```bash
@@ -454,9 +599,6 @@ git ci -m     # em vez de git commit -m
 ```bash
 # Ver histórico gráfico
 git log --graph --oneline --all
-
-# Ferramenta visual built-in
-gitk --all
 
 # Status colorido
 git config --global color.ui auto
