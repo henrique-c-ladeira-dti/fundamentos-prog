@@ -4,6 +4,8 @@
 <img src="./images/book_cover.png" alt="Capa do Livro - Fundamentos de Programação" width="400">
 </div>
 
+> **⚠️ Disclaimer:** Este conteúdo está sendo gerado com auxílio de inteligência artificial e encontra-se em desenvolvimento ativo (work in progress). O material pode ser atualizado, revisado ou expandido a qualquer momento.
+
 Este repositório contém material didático sobre os fundamentos que conectam eletrônica, sistemas digitais e programação, fornecendo uma base sólida para entender como funcionam os computadores modernos.
 
 ---
