@@ -350,6 +350,74 @@ Quando você escreve uma instrução como `ADD A, B` em linguagem assembly, uma 
 
 > **Conexão prática:** Esta sequência demonstra como conceitos abstratos de programação (como `A + B` em uma linguagem de alto nível) eventualmente se materializam em operações físicas concretas executadas por bilhões de transistores trabalhando em conjunto coordenado.
 
+#### **O Program Counter: Controle Sequencial de Execução**
+
+Para que as operações da ALU ocorram de forma coordenada e na ordem correta, o processador utiliza um componente chamado **Program Counter (PC)** ou **Contador de Programa**. Este componente mantém o endereço da próxima instrução a ser executada, garantindo que o programa siga uma sequência lógica.
+
+**Funcionamento do Program Counter:**
+
+- **Armazenamento de endereço:** O PC contém o endereço de memória da próxima instrução
+- **Incremento automático:** Após cada instrução, o PC é automaticamente incrementado
+- **Saltos condicionais:** Instruções especiais podem modificar o PC para criar loops e condicionais
+- **Natureza sequencial:** Por padrão, instruções são executadas uma após a outra
+
+#### **Exemplo Prático: Execução Sequencial**
+
+Considere este programa assembly simplificado que calcula a soma de dois números:
+
+```assembly
+Endereço | Instrução    | Descrição
+---------|--------------|----------------------------------
+0x100    | LOAD A, 10   | Carrega valor 10 no registrador A
+0x101    | LOAD B, 5    | Carrega valor 5 no registrador B
+0x102    | ADD A, B     | Soma A + B, resultado vai para A
+0x103    | STORE A, C   | Armazena resultado na variável C
+0x104    | HALT         | Para a execução do programa
+```
+
+**Sequência de execução:**
+
+1. **PC = 0x100:** Processador busca instrução `LOAD A, 10`
+
+   - Executa: Carrega 10 no registrador A
+   - PC incrementa automaticamente para 0x101
+
+2. **PC = 0x101:** Processador busca instrução `LOAD B, 5`
+
+   - Executa: Carrega 5 no registrador B
+   - PC incrementa para 0x102
+
+3. **PC = 0x102:** Processador busca instrução `ADD A, B`
+
+   - Executa: ALU soma A (10) + B (5) = 15, armazena em A
+   - PC incrementa para 0x103
+
+4. **PC = 0x103:** Processador busca instrução `STORE A, C`
+
+   - Executa: Armazena valor 15 na memória (variável C)
+   - PC incrementa para 0x104
+
+5. **PC = 0x104:** Processador busca instrução `HALT`
+   - Executa: Para a execução do programa
+
+**Exemplo com Controle de Fluxo:**
+
+```assembly
+Endereço | Instrução      | Descrição
+---------|----------------|----------------------------------
+0x200    | LOAD A, 3      | Carrega valor 3 no registrador A
+0x201    | LOAD B, 0      | Carrega valor 0 no registrador B (contador)
+0x202    | CMP B, A       | Compara B com A
+0x203    | JGE 0x206      | Se B >= A, pula para endereço 0x206
+0x204    | INC B          | Incrementa B
+0x205    | JMP 0x202      | Pula de volta para 0x202 (loop)
+0x206    | HALT           | Para a execução
+```
+
+Este programa conta de 0 até 3, demonstrando como o PC pode ser modificado para criar estruturas de controle como loops.
+
+> **Princípio fundamental:** O Program Counter transforma a execução aparentemente "mágica" de programas em um processo sistemático e previsível, onde cada instrução é buscada, decodificada e executada em sequência, com a ALU realizando os cálculos necessários quando solicitada.
+
 ---
 
 ## Parte V: Software e Sistemas Operacionais
