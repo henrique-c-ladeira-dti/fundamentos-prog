@@ -51,6 +51,18 @@ ls -al                     # Combina -a e -l
 # cat - Mostra conteúdo de arquivo
 cat arquivo.txt
 
+# cp - Copia arquivos e diretórios
+cp arquivo.txt copia.txt           # Copia arquivo
+cp arquivo.txt /caminho/destino/   # Copia para outro diretório
+cp -r pasta/ nova_pasta/           # Copia diretório recursivamente
+cp *.txt backup/                   # Copia todos .txt para pasta backup
+
+# mv - Move/renomeia arquivos e diretórios
+mv arquivo.txt novo_nome.txt       # Renomeia arquivo
+mv arquivo.txt /outro/diretorio/   # Move arquivo para outro local
+mv pasta/ novo_local/              # Move diretório completo
+mv *.jpg fotos/                    # Move todas imagens para pasta fotos
+
 # open - Abre com aplicativo padrão
 open foto.jpg              # Abre imagem
 open .                     # Abre pasta atual no Finder
@@ -66,6 +78,11 @@ pbpaste > novo.txt         # Cola clipboard em arquivo
 # grep - Procura padrões em texto
 grep "erro" log.txt                    # Busca "erro" no arquivo
 cat log.txt | grep "sucesso"          # Filtra saída do cat
+
+# which - Mostra localização de comandos
+which python                          # Mostra caminho do Python
+which git                             # Mostra onde está instalado o Git
+which -a python                       # Mostra todas as versões instaladas
 ```
 
 ### 2.4 Operadores Importantes
