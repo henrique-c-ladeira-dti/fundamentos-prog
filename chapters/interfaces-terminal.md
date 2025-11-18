@@ -45,11 +45,23 @@ ls -l                      # Detalhes (permissões, tamanho, data)
 ls -al                     # Combina -a e -l
 ```
 
-### 2.2 Manipulação de Arquivos
+### 2.2 Manipulação de Arquivos e Diretórios
 
 ```bash
 # cat - Mostra conteúdo de arquivo
 cat arquivo.txt
+
+# mkdir - Cria diretórios
+mkdir nova_pasta                   # Cria um diretório
+mkdir -p pasta/subpasta/profunda   # Cria estrutura completa (parents)
+mkdir projeto_{1..5}               # Cria projeto_1, projeto_2, etc.
+
+# rm - Remove arquivos e diretórios
+rm arquivo.txt                     # Remove arquivo
+rm -i arquivo.txt                  # Remove com confirmação
+rm -r pasta/                       # Remove diretório recursivamente
+rm -rf pasta/                      # Remove forçado (CUIDADO!)
+rm *.tmp                          # Remove todos arquivos .tmp
 
 # cp - Copia arquivos e diretórios
 cp arquivo.txt copia.txt           # Copia arquivo
