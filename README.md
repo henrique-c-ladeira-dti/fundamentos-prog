@@ -50,6 +50,20 @@ Guia completo sobre Git, o sistema de controle de versão mais usado no desenvol
 - Boas práticas e organização
 - **Comandos de referência rápida**
 
+### 🌐 **[GitHub e Repositórios Remotos](./chapters/github-repositorios-remotos.md)**
+
+Conexão entre Git local e plataformas de hospedagem remota como GitHub.
+
+**Conteúdo abordado:**
+
+- GitHub vs Git (conceitos e diferenças)
+- Protocolos de conexão: HTTPS vs SSH
+- Configuração de chaves SSH
+- Personal Access Tokens
+- Gerenciamento de remotes
+- Fluxo prático completo
+- **Solução de problemas comuns**
+
 ### 📊 **[Tabela de Conversão entre Sistemas Numéricos](./chapters/tabela-conversao-sistemas.md)**
 
 Referência completa para conversões entre decimal, binário e hexadecimal.
