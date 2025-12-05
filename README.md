@@ -64,6 +64,18 @@ Conexão entre Git local e plataformas de hospedagem remota como GitHub.
 - Fluxo prático completo
 - **Solução de problemas comuns**
 
+### 🐍 **[Exemplos Práticos em Diferentes Linguagens](./chapters/exemplos-praticos-linguagens.md)**
+
+Programas simples implementados em diversas linguagens de programação.
+
+**Conteúdo abordado:**
+
+- Programa de saudação personalizada
+- Sintaxe básica e entrada/saída
+- Python (implementado)
+- Comparação entre linguagens
+- **Exemplos expandíveis**
+
 ### 📊 **[Tabela de Conversão entre Sistemas Numéricos](./chapters/tabela-conversao-sistemas.md)**
 
 Referência completa para conversões entre decimal, binário e hexadecimal.
