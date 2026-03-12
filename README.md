@@ -76,7 +76,27 @@ Programas simples implementados em diversas linguagens de programação.
 - Comparação entre linguagens
 - **Exemplos expandíveis**
 
-### 📊 **[Tabela de Conversão entre Sistemas Numéricos](./chapters/tabela-conversao-sistemas.md)**
+### � **[Variáveis e Funções](./chapters/variaveis-funcoes.md)**
+
+Conceitos fundamentais de variáveis e funções, elementos essenciais para armazenar dados e organizar código.
+
+**Conteúdo abordado:**
+
+- **Parte I: Variáveis**
+  - Conceito e componentes de variáveis
+  - Declaração e inicialização
+  - Tipos de dados primitivos (int, float, string, boolean)
+  - Escopo de variáveis (global, local, bloco)
+  - Nomenclatura e convenções
+- **Parte II: Funções**
+  - Conceito e vantagens das funções
+  - Anatomia de uma função
+  - Declaração em diferentes linguagens
+  - Parâmetros e retorno de valores
+  - Funções sem retorno (procedures)
+  - **Boas práticas e organização de código**
+
+### �📊 **[Tabela de Conversão entre Sistemas Numéricos](./chapters/tabela-conversao-sistemas.md)**
 
 Referência completa para conversões entre decimal, binário e hexadecimal.
 
@@ -147,16 +167,16 @@ fundamentos-prog/
 │   ├── introducao.md                  # Documento principal
 │   ├── interfaces-terminal.md         # Guia do terminal
 │   ├── git-controle-versao.md         # Guia do Git
+│   ├── github-repositorios-remotos.md # Guia do GitHub
+│   ├── linguagens-paradigmas.md       # Linguagens e paradigmas
+│   ├── exemplos-praticos-linguagens.md # Exemplos práticos
+│   ├── variaveis-funcoes.md           # Variáveis e funções
 │   └── tabela-conversao-sistemas.md   # Tabela de referência
 └── images/
     ├── res-cap-ind.png               # Componentes elétricos
     ├── dio-trans.png                 # Componentes eletrônicos
     ├── alu.png                       # Diagrama da ALU
     └── book_cover.png                # Capa do livro
-```
-
-    └── alu.png                       # Diagrama da ALU
-
 ```
 
 ---
@@ -167,8 +187,7 @@ fundamentos-prog/
 
 - **[📖 Introdução Completa](./chapters/introducao.md)** - Fundamentos de eletrônica e programação
 - **[💻 Terminal e Interfaces](./chapters/interfaces-terminal.md)** - Guia prático do terminal
-- **[� Controle de Versão Git](./chapters/git-controle-versao.md)** - Sistema de versionamento
-- **[�📊 Tabela de Conversão](./chapters/tabela-conversao-sistemas.md)** - Sistemas numéricos
+- **[� Controle de Versão Git](./chapters/git-controle-versao.md)** - Sistema de versionamento- **[📦 Variáveis e Funções](./chapters/variaveis-funcoes.md)** - Conceitos fundamentais de programação- **[�📊 Tabela de Conversão](./chapters/tabela-conversao-sistemas.md)** - Sistemas numéricos
 
 ### Seções Específicas
 
@@ -207,4 +226,7 @@ Sugestões de melhoria são bem-vindas! Se encontrar erros ou tiver ideias para 
 ---
 
 **📚 Bons estudos e welcome to the world of computing fundamentals!** 🚀
+
+```
+
 ```
